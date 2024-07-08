@@ -4,10 +4,10 @@ using NorthCashFlow.Comunication.Requests;
 namespace NorthCashFlow.Aplication.UseCases.Expenses.Register;
 
 /// <summary>
-/// Validator for expense registration requests.
-/// This class extends the AbstractValidator from FluentValidation to define rules
-/// for validating the fields of a RequestRegisterExpenseJson object. It ensures that
-/// the request data meets the specified criteria before proceeding with expense registration.
+///     Validator for expense registration requests.
+///     This class extends the AbstractValidator from FluentValidation to define rules
+///     for validating the fields of a RequestRegisterExpenseJson object. It ensures that
+///     the request data meets the specified criteria before proceeding with expense registration.
 /// </summary>
 public class RegisterExpenseValidator : AbstractValidator<RequestRegisterExpenseJson>
 {

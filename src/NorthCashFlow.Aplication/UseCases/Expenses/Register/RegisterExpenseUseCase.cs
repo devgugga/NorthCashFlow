@@ -1,5 +1,6 @@
 ﻿using NorthCashFlow.Comunication.Requests;
 using NorthCashFlow.Comunication.Responses;
+using NorthCashFlow.Exception.ExceptionsBase;
 
 namespace NorthCashFlow.Aplication.UseCases.Expenses.Register;
 
@@ -45,6 +46,10 @@ public class RegisterExpenseUseCase
         #endregion
 
         if (!result.IsValid)
-            result.Errors.Select(f => f.ErrorMessage).ToList().ForEach(f => throw new ArgumentException(f));
+        {
+            var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
+
+            throw new ErrorOnValidationException(errorMessages);
+        }
     }
 }
