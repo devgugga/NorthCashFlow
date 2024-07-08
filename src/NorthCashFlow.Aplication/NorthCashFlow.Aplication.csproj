@@ -1,15 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NorthCashFlow.Comunication\NorthCashFlow.Comunication.csproj" />
-    <ProjectReference Include="..\NorthCashFlow.Domain\NorthCashFlow.Domain.csproj" />
-    <ProjectReference Include="..\NorthCashFlow.Exception\NorthCashFlow.Exception.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\NorthCashFlow.Comunication\NorthCashFlow.Comunication.csproj"/>
+        <ProjectReference Include="..\NorthCashFlow.Domain\NorthCashFlow.Domain.csproj"/>
+        <ProjectReference Include="..\NorthCashFlow.Exception\NorthCashFlow.Exception.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.9.2" />
+    </ItemGroup>
 
 </Project>
