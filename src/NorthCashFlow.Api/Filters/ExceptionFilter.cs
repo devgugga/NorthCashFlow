@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NorthCashFlow.Comunication.Responses;
+using NorthCashFlow.Exception;
 using NorthCashFlow.Exception.ExceptionsBase;
 
 namespace NorthCashFlow.Api.Filters;
@@ -40,7 +41,7 @@ public class ExceptionFilter : IExceptionFilter
         }
         else
         {
-            var errorResponse = new ResponseErrorJson("Internal error. Please, try again later.");
+            var errorResponse = new ResponseErrorJson(ResourceErrorMessages.INTERNAL_ERROR);
 
             context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             context.Result = new ObjectResult(errorResponse);
@@ -53,7 +54,7 @@ public class ExceptionFilter : IExceptionFilter
     /// <param name="context">The context in which the exception occurred.</param>
     private void HandleUnknownException(ExceptionContext context)
     {
-        var errorResponse = new ResponseErrorJson("Uknown error. Please, try again later.");
+        var errorResponse = new ResponseErrorJson(ResourceErrorMessages.UNKNOWN_ERROR);
 
         context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Result = new ObjectResult(errorResponse);

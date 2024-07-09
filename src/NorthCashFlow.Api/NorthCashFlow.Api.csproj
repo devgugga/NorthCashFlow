@@ -7,14 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\NorthCashFlow.Aplication\NorthCashFlow.Aplication.csproj"/>
-        <ProjectReference Include="..\NorthCashFlow.Comunication\NorthCashFlow.Comunication.csproj"/>
-        <ProjectReference Include="..\NorthCashFlow.Exception\NorthCashFlow.Exception.csproj"/>
-        <ProjectReference Include="..\NorthCashFlow.Infrastructure\NorthCashFlow.Infrastructure.csproj"/>
+        <ProjectReference Include="..\NorthCashFlow.Aplication\NorthCashFlow.Aplication.csproj" />
+        <ProjectReference Include="..\NorthCashFlow.Comunication\NorthCashFlow.Comunication.csproj" />
+        <ProjectReference Include="..\NorthCashFlow.Exception\NorthCashFlow.Exception.csproj" />
+        <ProjectReference Include="..\NorthCashFlow.Infrastructure\NorthCashFlow.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

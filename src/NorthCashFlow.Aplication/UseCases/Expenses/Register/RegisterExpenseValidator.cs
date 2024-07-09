@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using NorthCashFlow.Comunication.Requests;
+using NorthCashFlow.Exception;
 
 namespace NorthCashFlow.Aplication.UseCases.Expenses.Register;
 
@@ -16,21 +17,21 @@ public class RegisterExpenseValidator : AbstractValidator<RequestRegisterExpense
         // Ensures the title is not empty
         RuleFor(request => request.Title)
             .NotEmpty()
-            .WithMessage("Title is required");
+            .WithMessage(ResourceErrorMessages.TITLE_REQUIRED);
 
         // Validates that the value is greater than zero
         RuleFor(request => request.Value)
             .GreaterThan(0)
-            .WithMessage("Value must be greater than zero");
+            .WithMessage(ResourceErrorMessages.GREATER_THAN_ZERO);
 
         // Checks that the date is not in the future
         RuleFor(request => request.Date)
             .LessThanOrEqualTo(DateTime.UtcNow)
-            .WithMessage("Date must be less than or equal to the current date");
+            .WithMessage(ResourceErrorMessages.FUTURE_DATE_ERROR);
 
         // Ensures the payment type is a valid enum value
         RuleFor(request => request.PaymentType)
             .IsInEnum()
-            .WithMessage("Payment type is invalid must be between 1 and 3");
+            .WithMessage(ResourceErrorMessages.PAYMENT_TYPE_INVALID);
     }
 }
